@@ -2,97 +2,99 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Samar & Sharmin</title>
 
 <style>
-body{
-margin:0;
-font-family:Georgia,serif;
-background:radial-gradient(circle at top,#865057,#2b1a1d);
-color:#55353a;
-overflow:hidden;
+*{
+    box-sizing:border-box;
 }
 
-.card{
-width:min(92vw,430px);
-height:88vh;
-margin:auto;
-margin-top:20px;
-background:radial-gradient(circle,#fffdf6,#f1dac8);
-border:5px double #b78b3e;
-border-radius:28px;
-box-shadow:0 25px 70px #0008;
-position:relative;
-overflow:hidden;
+bo*y{
+    margin:0;
+    min-height:10*vh;
+    background:radial-gradient*circle at top,#865057,#2b1a1d);
+  * display:flex;
+    justify-content*center;
+    align-items:center;
+  * font-family:Georgia,serif;
+}
+
+.ca*d{
+    width:min(92vw,430px);
+    *in-height:700px;
+    background:ra*ial-gradient(circle,#fffdf6,#f1dac*);
+    border:5px double #b78b3e;
+*   border-radius:28px;
+    overflo*:hidden;
+    box-shadow:0 25px 70p* rgba(0,0,0,.5);
+    position:rela*ive;
 }
 
 .cover{
-position:absolute;
-inset:0;
-background:linear-gradient(135deg,#d3a65b,#f4dfc2,#b9853a);
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-text-align:center;
-transition:1s;
-transform-origin:left;
-z-index:10;
+    position:absol*te;
+    inset:0;
+    background:li*ear-gradient(135deg,#d3a65b,#f4dfc*,#b9853a);
+    display:flex;
+    f*ex-direction:column;
+    justify-c*ntent:center;
+    align-items:cent*r;
+    text-align:center;
+    z-in*ex:10;
+    transition:1s;
 }
 
-.cover.open{
-transform:rotateY(-105deg);
-opacity:0;
-pointer-events:none;
+.cove*.open{
+    opacity:0;
+    pointer-*vents:none;
 }
 
 .names{
-font-size:52px;
-line-height:1;
-font-style:italic;
+    font-si*e:52px;
+    line-height:1.1;
+    c*lor:#773642;
+    font-style:italic*
 }
 
 .gold{
-color:#a77b33;
-letter-spacing:.18em;
-text-transform:uppercase;
-font-size:12px;
+    color:#a77b33;
+    *etter-spacing:.15em;
+    text-tran*form:uppercase;
+    font-size:12px*
 }
 
-.page{
-padding:40px 30px;
-text-align:center;
+.content{
+    padding:40px 25p*;
+    text-align:center;
 }
 
-button{
-padding:12px 25px;
-border-radius:30px;
-border:none;
-background:#fff8;
-font-weight:bold;
-cursor:pointer;
-}
+.btn{
+*   display:inline-block;
+    margi*:10px;
+    padding:12px 18px;
+    *order-radius:15px;
+    border:1px *olid #d2af68;
+    background:#fff6*8;
+    color:#773642;
+    text-dec*ration:none;
+    font-weight:bold;*}
 
-.action{
-display:inline-block;
-padding:12px 18px;
-margin:8px;
-background:#fff6e8;
-border:1px solid #d2af68;
-border-radius:15px;
-color:#773642;
-text-decoration:none;
-font-weight:bold;
+.openbtn{
+    padding:12px 24px*
+    border:none;
+    border-radiu*:30px;
+    background:#ffffffaa;
+ *  font-weight:bold;
+    cursor:poi*ter;
 }
 </style>
 </head>
 
 <body>
 
-<audio id="bgMusic" loop>
-Nasheed-mc-mc-mc.mp3
+<audio id="bgMusic" controls style="display:none;">
+    Nasheed-mc-mc-mc.mp3
 </audio>
 
 <div class="card">
@@ -109,13 +111,13 @@ Samar<br>&<br>Sharmin
 
 <p>29 October 2026</p>
 
-<button onclick="openCard()">
+<button class="openbtn" onclick="openInvitation()">
 TOUCH TO OPEN
 </button>
 
 </div>
 
-<div class="page">
+<div class="content">
 
 <div class="gold">
 Wedding Invitation
@@ -135,27 +137,29 @@ With the blessings of our families
 
 <p>
 Thursday, 29 October 2026
-<br><br>
+</p>
+
+<p>
 8:00 PM
 </p>
 
 <p>
 The Cennet<br>
-Road No.16, Jawahar Nagar<br>
+Road No. 16, Jawahar Nagar<br>
 Mango, Jamshedpur
 </p>
 
-<a class="action"
+<a class="btn"
 target="_blank"
 href="https://www.google.com/maps/search/?api=1&query=The+Cennet+Road+No.+16+Jawahar+Nagar+Mango+Jamshedpur">
 📍 Venue
 </a>
 
 https://wa.me/919430183626
-RSVP
+💬 RSVP
 </a>
 
-<p style="margin-top:25px;">
+<p style="margin-top:30px">
 With best compliments from<br>
 Md. Qamruddin & Family
 </p>
@@ -165,14 +169,17 @@ Md. Qamruddin & Family
 </div>
 
 <script>
-function openCard(){
+function openInvitation(){
 
-document.getElementById('cover').classList.add('open');
+    document.getElementById("cover").classList.add("open");
 
-const music =
-document.getElementById('bgMusic');
+    const music = document.getElementById("bgMusic");
 
-music.play().catch(()=>{});
+    music.play().then(() => {
+        console.log("music started");
+    }).catch(err => {
+        console.log(err);
+    });
 
 }
 </script>
