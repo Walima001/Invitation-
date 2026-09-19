@@ -7,99 +7,62 @@
 <title>Samar & Sharmin</title>
 
 <style>
-*{
-    box-sizing:border-box;
-}
-
-bo*y{
+body{
     margin:0;
-    min-height:10*vh;
-    background:radial-gradient*circle at top,#865057,#2b1a1d);
-  * display:flex;
-    justify-content*center;
-    align-items:center;
-  * font-family:Georgia,serif;
-}
-
-.ca*d{
-    width:min(92vw,430px);
-    *in-height:700px;
-    background:ra*ial-gradient(circle,#fffdf6,#f1dac*);
-    border:5px double #b78b3e;
-*   border-radius:28px;
-    overflo*:hidden;
-    box-shadow:0 25px 70p* rgba(0,0,0,.5);
-    position:rela*ive;
-}
-
-.cover{
-    position:absol*te;
-    inset:0;
-    background:li*ear-gradient(135deg,#d3a65b,#f4dfc*,#b9853a);
+    font-family:Georgia,serif;
+    background:radial-gradient(circle at top,#865057,#2b1a1d);
     display:flex;
-    f*ex-direction:column;
-    justify-c*ntent:center;
-    align-items:cent*r;
-    text-align:center;
-    z-in*ex:10;
-    transition:1s;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
 }
 
-.cove*.open{
-    opacity:0;
-    pointer-*vents:none;
+.card{
+    width:min(92vw,430px);
+    background:radial-gradient(circle,#fffdf6,#f1dac8);
+    border:5px double #b78b3e;
+    border-radius:28px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
 }
 
 .names{
-    font-si*e:52px;
-    line-height:1.1;
-    c*lor:#773642;
-    font-style:italic*
+    color:#773642;
+    font-size:50px;
+    font-style:italic;
+    line-height:1;
 }
 
 .gold{
     color:#a77b33;
-    *etter-spacing:.15em;
-    text-tran*form:uppercase;
-    font-size:12px*
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    font-size:12px;
 }
 
-.content{
-    padding:40px 25p*;
-    text-align:center;
+audio{
+    width:100%;
+    margin:20px 0;
 }
 
 .btn{
-*   display:inline-block;
-    margi*:10px;
+    display:inline-block;
     padding:12px 18px;
-    *order-radius:15px;
-    border:1px *olid #d2af68;
-    background:#fff6*8;
+    margin:8px;
+    background:#fff6e8;
+    border:1px solid #d2af68;
+    border-radius:12px;
     color:#773642;
-    text-dec*ration:none;
-    font-weight:bold;*}
-
-.openbtn{
-    padding:12px 24px*
-    border:none;
-    border-radiu*:30px;
-    background:#ffffffaa;
- *  font-weight:bold;
-    cursor:poi*ter;
+    text-decoration:none;
+    font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<audio id="bgMusic" controls style="display:none;">
-    Nasheed-mc-mc-mc.mp3
-</audio>
-
 <div class="card">
-
-<div id="cover" class="cover">
 
 <div class="gold">
 Bismillah-ir-Rahman-ir-Raheem
@@ -111,41 +74,20 @@ Samar<br>&<br>Sharmin
 
 <p>29 October 2026</p>
 
-<button class="openbtn" onclick="openInvitation()">
-TOUCH TO OPEN
-</button>
-
-</div>
-
-<div class="content">
-
-<div class="gold">
-Wedding Invitation
-</div>
-
-<h1 class="names">
-Samar<br>&<br>Sharmin
-</h1>
-
-<p>
-With the blessings of our families
-</p>
-
-<hr>
+<audio controls autoplay loop>
+    Nasheed-mc-mc-mc.mp3
+</audio>
 
 <h2>Dawat-e-Walima</h2>
 
 <p>
-Thursday, 29 October 2026
-</p>
-
-<p>
+Thursday, 29 October 2026<br>
 8:00 PM
 </p>
 
 <p>
 The Cennet<br>
-Road No. 16, Jawahar Nagar<br>
+Road No.16, Jawahar Nagar<br>
 Mango, Jamshedpur
 </p>
 
@@ -156,33 +98,15 @@ href="https://www.google.com/maps/search/?api=1&query=The+Cennet+Road+No.+16+Jaw
 </a>
 
 https://wa.me/919430183626
-💬 RSVP
+RSVP
 </a>
 
-<p style="margin-top:30px">
+<p style="margin-top:25px">
 With best compliments from<br>
 Md. Qamruddin & Family
 </p>
 
 </div>
-
-</div>
-
-<script>
-function openInvitation(){
-
-    document.getElementById("cover").classList.add("open");
-
-    const music = document.getElementById("bgMusic");
-
-    music.play().then(() => {
-        console.log("music started");
-    }).catch(err => {
-        console.log(err);
-    });
-
-}
-</script>
 
 </body>
 </html>
